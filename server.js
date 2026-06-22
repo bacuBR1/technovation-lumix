@@ -7,10 +7,15 @@ server.use(express.json());
 const cadastrarEditais = require("./routes/cadastroEditais.js");
 const deletarEditais = require("./routes/deletarEditais.js");
 const atualizarEditais = require("./routes/atualizarEditais.js");
+const verEditais = require("./routes/verEditais.js");
+const verEsitalEspecifico = require('./routes/verEditalEspecifico.js');
+
 
 server.use('/cadastrarEditais', cadastrarEditais);
 server.use('/deletarEditais', deletarEditais);
 server.use('/atualizarEditais', atualizarEditais);
+server.use('/verEditais', verEditais);
+server.use('/verEditalEspecifico', verEsitalEspecifico);
 
 async function testDBConnection() {
     try {
