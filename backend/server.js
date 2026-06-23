@@ -4,11 +4,11 @@ const server = express();
 const db = require('./config/db');
 server.use(express.json());
 
-const cadastrarEditais = require("./routes/cadastroEditais.js");
-const deletarEditais = require("./routes/deletarEditais.js");
-const atualizarEditais = require("./routes/atualizarEditais.js");
-const verEditais = require("./routes/verEditais.js");
-const verEsitalEspecifico = require('./routes/verEditalEspecifico.js');
+const cadastrarEditais = require("../routes/cadastroEditais.js");
+const deletarEditais = require("../routes/deletarEditais.js");
+const atualizarEditais = require("../routes/atualizarEditais.js");
+const verEditais = require("../routes/verEditais.js");
+const verEsitalEspecifico = require('../routes/verEditalEspecifico.js');
 
 
 server.use('/cadastrarEditais', cadastrarEditais);
