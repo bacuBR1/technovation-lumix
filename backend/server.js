@@ -1,8 +1,10 @@
 require('dotenv').config();
 const express = require('express');
+const cors = require('cors');
 const server = express();
 const db = require('./config/db');
 server.use(express.json());
+server.use(cors());
 
 const cadastrarEditais = require("./routes/cadastroEditais.js");
 const deletarEditais = require("./routes/deletarEditais.js");
