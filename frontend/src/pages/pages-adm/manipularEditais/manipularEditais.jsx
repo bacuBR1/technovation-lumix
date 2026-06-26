@@ -113,6 +113,7 @@ function CadastrarEditais() {
                     <div>
                         <h1>Editar Editais</h1>
                         <p>Conteúdo da página de edição de editais.</p>
+                        {resposta !== "" && <p>{resposta}</p>}
                     </div>
                     <div>
                         <ul id="editar-lista">
@@ -131,6 +132,7 @@ function CadastrarEditais() {
                     <div>
                         <h1>Deletar Editais</h1>
                         <p>Conteúdo da página de deleção de editais.</p>
+                        {resposta !== "" && <p>{resposta}</p>}
                     </div>
                     <div>
                         <input type="text" placeholder="ID" ref={deletarId} />
