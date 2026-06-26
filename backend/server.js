@@ -1,11 +1,11 @@
 require('dotenv').config();
 const express = require('express');
-const cors = require('cors');
 const server = express();
 const db = require('./config/db');
 server.use(express.json());
-server.use(cors());
 
+
+//editais//
 const cadastrarEditais = require("./routes/cadastroEditais.js");
 const deletarEditais = require("./routes/deletarEditais.js");
 const atualizarEditais = require("./routes/atualizarEditais.js");
@@ -18,6 +18,14 @@ server.use('/deletarEditais', deletarEditais);
 server.use('/atualizarEditais', atualizarEditais);
 server.use('/verEditais', verEditais);
 server.use('/verEditalEspecifico', verEsitalEspecifico);
+
+
+//cadastros//
+const cadalunos = require("./routes/cadaluno.js");
+const cadprof = require("./routes/cadprof.js");
+
+server.use("/cadalunos", cadalunos);
+server.use("/cadprof",cadprof);
 
 async function testDBConnection() {
     try {
