@@ -23,9 +23,17 @@ server.use('/verEditalEspecifico', verEsitalEspecifico);
 //cadastros//
 const cadalunos = require("./routes/cadaluno.js");
 const cadprof = require("./routes/cadprof.js");
+const deletaluno = require("./routes/deletaluno.js");
+const deletprof = require("./routes/deletprof.js");
+const atualizaalun = require("./routes/atualizaalun.js");
+const atualizaprof = require("./routes/atualizaprof.js");
 
 server.use("/cadalunos", cadalunos);
 server.use("/cadprof",cadprof);
+server.use("/deletaluno", deletaluno);
+server.use("/deletprof", deletprof);
+server.use("atualizaalun", atualizaalun);
+server.use("atualizaprof", atualizaprof);
 
 async function testDBConnection() {
     try {

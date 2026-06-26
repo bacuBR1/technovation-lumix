@@ -4,7 +4,7 @@ const { DataTypes } = require("sequelize");
 const db = require("../config/db.js");
 
 const cadaluno = db.define(
-    "cadaluno",
+    "alunos",
     {
         nome: {
             type: DataTypes.STRING,
@@ -32,7 +32,7 @@ const cadaluno = db.define(
         }
     },
     {
-        tableName: "cadaluno",
+        tableName: "alunos",
         timestamps: false
     }
 );

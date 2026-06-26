@@ -2,7 +2,7 @@ const { DataTypes } = require("sequelize");
 const db = require("../config/db.js");
 
 const cadprof = db.define (
-    "cadprof",
+    "professores",
     {
         nome: {
             type: DataTypes.STRING,
@@ -29,7 +29,7 @@ const cadprof = db.define (
         }
     },
     {
-        tablename: "cadprof",
+        tablename: "professores",
         timestamps: "false",
     }
 );
