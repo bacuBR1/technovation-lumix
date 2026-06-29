@@ -30,7 +30,7 @@ const cadprof = db.define (
     },
     {
         tablename: "professores",
-        timestamps: "false",
+        timestamps: false,
     }
 );
 

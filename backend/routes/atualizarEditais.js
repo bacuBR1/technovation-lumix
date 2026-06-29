@@ -18,6 +18,7 @@ router.put("/", async (req, res) => {
 
         res.status(200).json(editais);
     } catch (error) {
+        console.error('atualizarEditais error:', error);
         res.status(500).json(error);
     }
 });

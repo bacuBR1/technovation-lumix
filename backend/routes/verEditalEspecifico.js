@@ -10,8 +10,7 @@ router.get("/", async (req, res) => {
                 return res.status(404).json({ erro: "Edital não encontrado" });         
             };
         res.status(200).json(editais);
-    } catch (error) {
-        res.status(500).json(error);
+    } catch (error) {        console.error('verEditalEspecifico error:', error);        res.status(500).json(error);
     };
 });
 

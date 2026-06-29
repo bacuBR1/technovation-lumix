@@ -25,6 +25,11 @@ function CadastrarEditais() {
             }, 3000); 
     }
 
+
+    function voltar() {
+        window.location.href = "/";
+    };
+
     async function cadastrarEdital() {
         try {
             await api.post('/cadastrarEditais', {
@@ -70,9 +75,10 @@ function CadastrarEditais() {
     async function deletarEdital() {
         try {
             await api.post('/deletarEditais', {
-                id: editarId.current.value
+                id: deletarId.current.value
             });
 
+            deletarId.current.value = "";
             mostrarMensagem("Edital deletado com sucesso");
         } catch (error) {
             console.error('Erro ao deletar edital:', error);
@@ -84,6 +90,7 @@ function CadastrarEditais() {
     return (
         <div>
             <div>
+                <button onClick={ voltar }>voltar</button>
                 <h1>Gerenciar Editais</h1>
                 <div className="page-nav">
                     <a href="#cadastrar">Cadastrar</a>
@@ -112,7 +119,6 @@ function CadastrarEditais() {
                 <div>
                     <div>
                         <h1>Editar Editais</h1>
-                        <p>Conteúdo da página de edição de editais.</p>
                         {resposta !== "" && <p>{resposta}</p>}
                     </div>
                     <div>

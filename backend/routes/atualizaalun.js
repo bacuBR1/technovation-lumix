@@ -5,17 +5,22 @@ router.use(express.json());
 
 router.put ("/", async function(req, res){
     try{
-        const cadaluno = await cadaluno.findByPk(req.body.id);
+        console.log('atualizaalun body:', req.body);
+        const aluno = await cadaluno.findByPk(req.body.id);
+        if (!aluno) {
+            return res.status(404).json({ erro: "Aluno não encontrado" });
+        }
 
-        await cadaluno.updade ({
+        await aluno.update ({
             nome: req.body.nome,
             email: req.body.email,
             senha: req.body.senha,
         });
 
-        res.status(200).json(cadaluno);
+        res.status(200).json(aluno);
     } catch (error) {
-        res.status(500).json(error);
+        console.error('atualizaalun error:', error);
+        res.status(500).json({ error: error.message });
     }
 });
 

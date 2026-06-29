@@ -9,12 +9,11 @@ const router = express.Router();
 const usuario = require("../models/cadprof.models");
 router.use(express.json());
 
-router.post ("/cadprof", async function(req, res){
+router.post ("/", async function(req, res){
     try {
-        const { nome, id, matricula, email, senha } = req.body;
-        const novouser = await cadprof.create ({
+        const { nome, matricula, email, senha } = req.body;
+        const novouser = await usuario.create ({
             nome: req.body.nome,
-            id: req.body.id,
             matricula: req.body.matricula,
             email: req.body.email,
             senha: req.body.senha
@@ -24,6 +23,7 @@ router.post ("/cadprof", async function(req, res){
             user: novouser
         });
     } catch (error) {
+        console.error('cadprof error:', error);
         res.status(500).json({error: "Erro ao salvar usuário"});
     }
 });

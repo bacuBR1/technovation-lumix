@@ -14,6 +14,7 @@ router.post("/", async (req, res) => {
         
         res.status(200).json({ sucesso: "foi um sucesso" });
     } catch (error) {
+        console.error('deletarEditais error:', error);
         res.status(500).json(error);
     };
 });

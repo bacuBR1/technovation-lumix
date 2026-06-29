@@ -5,13 +5,14 @@ router.use(express.json());
 
 router.post ("/", async function (req, res) {
     try {
-        const cad = await cad.findByPk(req.body.id);
+        const cad = await cadaluno.findByPk(req.body.id);
 
         await cad.destroy();
         res.status(200).json({ sucesso: "foi um sucesso" });
     } catch (error) {
+        console.error('deletaluno error:', error);
         res.status(500).json(error);
     };
 });
 
-module.exports = router;
+module.exports = router; 

@@ -8,6 +8,7 @@ router.get("/", async (req, res) => {
         const editais = await Editais.findAll()
         res.status(200).json(editais);
     } catch (error) {
+        console.error('verEditais error:', error);
         res.status(500).json(error);
     };
 });

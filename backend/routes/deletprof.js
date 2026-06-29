@@ -10,6 +10,7 @@ router.post ("/", async function (req, res) {
         await cad.destroy();
         res.status(200).json({ sucesso: "foi um sucesso" });
     } catch (error) {
+        console.error('deletprof error:', error);
         res.status(500).json(error);
     };
 });

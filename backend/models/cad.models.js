@@ -19,7 +19,7 @@ const cadaluno = db.define(
         matricula: {
             type: DataTypes.STRING,
             allowNull: false,
-            uniqueKey: true,
+            unique: true,
 
         },
         email: {
@@ -27,7 +27,7 @@ const cadaluno = db.define(
             allowNull: true,
         },
         senha: {
-            type: DataTypes.STRING,
+            type: DataTypes.STRING(255),
             allowNull: false,
         }
     },
