@@ -12,6 +12,8 @@ import ManipularProfessores from './pages/pages-adm/manipular-professores/manipu
 import VerProfessores from './pages/pages-adm/verProfessores/verProfessores.jsx'
 import ManipularIntermediaria from './pages/pages-adm/manipular-intermediaria/manipularIntermediaria.jsx'
 import VerIntermediaria from './pages/pages-adm/ver-intermediaria/verIntermediaria.jsx'
+import ManipularTempo from './pages/pages-adm/manipular-tempo/manipularTempo.jsx'
+import VerTempo from './pages/pages-adm/ver-tempo/verTempo.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -26,6 +28,8 @@ createRoot(document.getElementById('root')).render(
         <Route path='/ver-professores' element={<VerProfessores />} />
         <Route path='/manipular-intermediaria' element={<ManipularIntermediaria />} />
         <Route path='/ver-intermediaria' element={<VerIntermediaria />} />
+        <Route path='/manipular-tempo' element={<ManipularTempo />} />
+        <Route path='/ver-tempo' element={<VerTempo />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>
