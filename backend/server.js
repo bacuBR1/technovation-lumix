@@ -25,6 +25,10 @@ const verAlunos = require("./routes/verAlunos.js");
 const verProfessores = require("./routes/verProfessores.js");
 const intermediaria = require("./routes/intermediaria.js");
 const verIntermediaria = require("./routes/verIntermediaria.js");
+const tempo = require("./routes/tempo.js");
+const verTempo = require("./routes/verTempo.js");
+const atualizarTempo = require("./routes/atualizarTempo.js");
+const deletarTempo = require("./routes/deletarTempo.js");
 
 //editais//
 server.use('/cadastrarEditais', cadastrarEditais);
@@ -44,6 +48,10 @@ server.use("/atualizaalun", atualizaalun);
 server.use("/atualizaprof", atualizaprof);
 server.use('/intermediariaCadastro', intermediaria);
 server.use('/verIntermediaria', verIntermediaria);
+server.use('/tempoCadastro', tempo);
+server.use('/verTempo', verTempo);
+server.use('/atualizarTempo', atualizarTempo);
+server.use('/deletarTempo', deletarTempo);
 
 async function testDBConnection() {
     try {

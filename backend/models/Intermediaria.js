@@ -4,6 +4,12 @@ const db = require("../config/db.js");
 const Intermediaria = db.define(
     'intermediaria',
     {
+        id: {
+            type: DataTypes.INTEGER,
+            primaryKey: true,
+            allowNull: false,
+            autoIncrement: true,
+        },
         professores: {
             type: DataTypes.INTEGER,
             allowNull: false,

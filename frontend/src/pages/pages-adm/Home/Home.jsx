@@ -34,6 +34,14 @@ function Home() {
       window.location.href = "/ver-intermediaria"
     }
 
+    function GoToTempo() {
+      window.location.href = "/manipular-tempo"
+    }
+
+    function GoToVerTempo() {
+      window.location.href = "/ver-tempo"
+    }
+
   return (
     <div className="home-page">
       <h1>Bem-vindo à página inicial!</h1>
@@ -47,6 +55,8 @@ function Home() {
         <li><button onClick={ GoToVerProfessores }> Ver cadastros de professores </button></li>
         <li><button onClick={ GoToIntermediaria }> cadastrar intermediária </button></li>
         <li><button onClick={ GoToVerIntermediaria }> ver intermediária </button></li>
+        <li><button onClick={ GoToTempo }> cadastrar tempo </button></li>
+        <li><button onClick={ GoToVerTempo }> ver tempo </button></li>
       </ul>
     </div>
   );
