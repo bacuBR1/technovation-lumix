@@ -6,7 +6,7 @@ function VerAlunos() {
 
     function voltar() {
         window.location.href = "/";
-    };
+    }
 
     useEffect(() => {
         async function buscarAlunos() {
@@ -25,7 +25,7 @@ function VerAlunos() {
         <div>
             <h1>Ver alunos cadastrados</h1>
 
-            <button onClick={ voltar }>voltar</button>
+            <button onClick={voltar}>voltar</button>
 
             <ul>
                 {alunos.map((aluno) => (

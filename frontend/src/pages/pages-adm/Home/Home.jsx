@@ -1,3 +1,5 @@
+import './home.css';
+
 function Home() {
 
     function GoToCadastro() {
@@ -16,8 +18,24 @@ function Home() {
       window.location.href = "/ver-alunos"
     }
 
+    function GoToProfessores() {
+      window.location.href = "/manipular-professores"
+    }
+
+    function GoToVerProfessores() {
+      window.location.href = "/ver-professores"
+    }
+
+    function GoToIntermediaria() {
+      window.location.href = "/manipular-intermediaria"
+    }
+
+    function GoToVerIntermediaria() {
+      window.location.href = "/ver-intermediaria"
+    }
+
   return (
-    <div>
+    <div className="home-page">
       <h1>Bem-vindo à página inicial!</h1>
       <p>Esta é a página inicial do seu aplicativo.</p>
       <ul>
@@ -25,6 +43,10 @@ function Home() {
         <li><button onClick={ GoToViews } > Ver Editais</button></li>
         <li><button onClick={ GoToAlunos }> cadastrar alunos </button></li>
         <li><button onClick={ GoToVerAlunos }> Ver cadastros de alunos </button></li>
+        <li><button onClick={ GoToProfessores }> cadastrar professores </button></li>
+        <li><button onClick={ GoToVerProfessores }> Ver cadastros de professores </button></li>
+        <li><button onClick={ GoToIntermediaria }> cadastrar intermediária </button></li>
+        <li><button onClick={ GoToVerIntermediaria }> ver intermediária </button></li>
       </ul>
     </div>
   );

@@ -1,4 +1,38 @@
-* {
-    background: black;
-    font-family: 'jetbrains mono', monospace;
+.home-page {
+    min-height: 100vh;
+    padding: 32px;
+    background: transparent;
+    color: #f4f4f4;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.home-page h1 {
+    margin-bottom: 16px;
+}
+
+.home-page p {
+    margin-bottom: 24px;
+    max-width: 640px;
+}
+
+.home-page ul {
+    list-style: none;
+    padding: 0;
+}
+
+.home-page li {
+    margin-bottom: 12px;
+}
+
+.home-page button {
+    background: #2b6cb0;
+    border: none;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.home-page button:hover {
+    background: #1d4f8f;
 }

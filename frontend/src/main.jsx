@@ -8,6 +8,10 @@ import ManipularEditais from './pages/pages-adm/manipularEditais/manipularEditai
 import VerEditais from './pages/pages-adm/verEditais/verEditais.jsx'
 import ManipularAlunos from './pages/pages-adm/manipular-alunos/manipularAlunos.jsx'
 import VerAlunos from './pages/pages-adm/verAlunos/verAlunos.jsx'
+import ManipularProfessores from './pages/pages-adm/manipular-professores/manipularProfessores.jsx'
+import VerProfessores from './pages/pages-adm/verProfessores/verProfessores.jsx'
+import ManipularIntermediaria from './pages/pages-adm/manipular-intermediaria/manipularIntermediaria.jsx'
+import VerIntermediaria from './pages/pages-adm/ver-intermediaria/verIntermediaria.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -18,6 +22,10 @@ createRoot(document.getElementById('root')).render(
         <Route path="/ver-editais" element={<VerEditais />} />
         <Route path='/manipular-alunos' element={<ManipularAlunos />} />
         <Route path='/ver-alunos' element={<VerAlunos />} />
+        <Route path='/manipular-professores' element={<ManipularProfessores />} />
+        <Route path='/ver-professores' element={<VerProfessores />} />
+        <Route path='/manipular-intermediaria' element={<ManipularIntermediaria />} />
+        <Route path='/ver-intermediaria' element={<VerIntermediaria />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>

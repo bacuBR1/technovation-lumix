@@ -22,6 +22,9 @@ const deletprof = require("./routes/deletprof.js");
 const atualizaalun = require("./routes/atualizaalun.js");
 const atualizaprof = require("./routes/atualizaprof.js");
 const verAlunos = require("./routes/verAlunos.js");
+const verProfessores = require("./routes/verProfessores.js");
+const intermediaria = require("./routes/intermediaria.js");
+const verIntermediaria = require("./routes/verIntermediaria.js");
 
 //editais//
 server.use('/cadastrarEditais', cadastrarEditais);
@@ -33,11 +36,14 @@ server.use('/verEditalEspecifico', verEsitalEspecifico);
 //cadastros//
 server.use("/cadalunos", cadalunos);
 server.use('/verAlunos', verAlunos);
+server.use('/verProfessores', verProfessores);
 server.use("/cadprof",cadprof);
 server.use("/deletaluno", deletaluno);
 server.use("/deletprof", deletprof);
 server.use("/atualizaalun", atualizaalun);
 server.use("/atualizaprof", atualizaprof);
+server.use('/intermediariaCadastro', intermediaria);
+server.use('/verIntermediaria', verIntermediaria);
 
 async function testDBConnection() {
     try {

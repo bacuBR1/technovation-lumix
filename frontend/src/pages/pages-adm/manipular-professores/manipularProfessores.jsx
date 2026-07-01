@@ -1,8 +1,8 @@
 import { useState, useRef } from 'react';
 import api from '../../../services/api';
-import './manipularAlunos.css';
+import './manipularProfessores.css';
 
-function ManipularAlunos() {
+function ManipularProfessores() {
     const [resposta, setResposta] = useState('');
     const cadastroNome = useRef();
     const cadastroMatricula = useRef();
@@ -24,9 +24,9 @@ function ManipularAlunos() {
         window.location.href = '/';
     }
 
-    async function cadastrarAluno() {
+    async function cadastrarProfessor() {
         try {
-            await api.post('/cadalunos', {
+            await api.post('/cadprof', {
                 nome: cadastroNome.current.value,
                 matricula: cadastroMatricula.current.value,
                 email: cadastroEmail.current.value,
@@ -36,16 +36,16 @@ function ManipularAlunos() {
             cadastroMatricula.current.value = '';
             cadastroEmail.current.value = '';
             cadastroSenha.current.value = '';
-            mostrarMensagem('Aluno cadastrado com sucesso');
+            mostrarMensagem('Professor cadastrado com sucesso');
         } catch (error) {
             console.error(error);
-            mostrarMensagem('Erro ao cadastrar aluno');
+            mostrarMensagem('Erro ao cadastrar professor');
         }
     }
 
-    async function atualizarAluno() {
+    async function atualizarProfessor() {
         try {
-            await api.put('/atualizaalun', {
+            await api.put('/atualizaprof', {
                 id: editarId.current.value,
                 nome: editarNome.current.value,
                 email: editarEmail.current.value,
@@ -55,54 +55,60 @@ function ManipularAlunos() {
             editarNome.current.value = '';
             editarEmail.current.value = '';
             editarSenha.current.value = '';
-            mostrarMensagem('Aluno atualizado com sucesso');
+            mostrarMensagem('Professor atualizado com sucesso');
         } catch (error) {
             console.error(error);
-            mostrarMensagem('Erro ao atualizar aluno');
+            mostrarMensagem('Erro ao atualizar professor');
         }
     }
 
-    async function deletarAluno() {
+    async function deletarProfessor() {
         try {
-            await api.post('/deletaluno', {
+            await api.post('/deletprof', {
                 id: deletarId.current.value,
             });
             deletarId.current.value = '';
-            mostrarMensagem('Aluno deletado com sucesso');
+            mostrarMensagem('Professor deletado com sucesso');
         } catch (error) {
             console.error(error);
-            mostrarMensagem('Erro ao deletar aluno');
+            mostrarMensagem('Erro ao deletar professor');
         }
     }
 
     return (
         <div>
             <button onClick={voltar}>voltar</button>
-            <h1>Manipular Alunos</h1>
+            <h1>Manipular Professores</h1>
             {resposta && <p>{resposta}</p>}
             <section>
-                <h2>Cadastrar aluno</h2>
-                <input ref={cadastroNome} placeholder="Nome" />
-                <input ref={cadastroMatricula} placeholder="Matrícula" />
-                <input ref={cadastroEmail} placeholder="Email" />
-                <input ref={cadastroSenha} placeholder="Senha" type="password" />
-                <button onClick={cadastrarAluno}>Cadastrar</button>
+                <div>
+                    <h2>Cadastrar professor</h2>
+                    <input ref={cadastroNome} placeholder="Nome" />
+                    <input ref={cadastroMatricula} placeholder="Matrícula" />
+                    <input ref={cadastroEmail} placeholder="Email" />
+                    <input ref={cadastroSenha} placeholder="Senha" type="password" />
+                    <button onClick={cadastrarProfessor}>Cadastrar</button>
+                </div>
             </section>
             <section>
-                <h2>Atualizar aluno</h2>
-                <input ref={editarId} placeholder="ID" />
-                <input ref={editarNome} placeholder="Novo nome" />
-                <input ref={editarEmail} placeholder="Novo email" />
-                <input ref={editarSenha} placeholder="Nova senha" type="password" />
-                <button onClick={atualizarAluno}>Atualizar</button>
+                <div>
+                    <h2>Atualizar professor</h2>
+                    <input ref={editarId} placeholder="ID" />
+                    <input ref={editarNome} placeholder="Novo nome" />
+                    <input ref={editarEmail} placeholder="Novo email" />
+                    <input ref={editarSenha} placeholder="Nova senha" type="password" />
+                    <button onClick={atualizarProfessor}>Atualizar</button>
+                </div>
             </section>
             <section>
-                <h2>Deletar aluno</h2>
-                <input ref={deletarId} placeholder="ID" />
-                <button onClick={deletarAluno}>Deletar</button>
+                <div>
+                    <h2>Deletar professor</h2>
+                    <input ref={deletarId} placeholder="ID" />
+                    <button onClick={deletarProfessor}>Deletar</button>
+                </div>
             </section>
         </div>
     );
 }
 
-export default ManipularAlunos;
+export default ManipularProfessores;

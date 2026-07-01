@@ -1,0 +1,17 @@
+/* Estilos básicos para a página de manipular professores */
+
+div {
+  padding: 16px;
+}
+
+button {
+  margin-top: 8px;
+}
+
+input {
+  display: block;
+  margin: 6px 0;
+  padding: 8px;
+  width: 100%;
+  max-width: 320px;
+}
